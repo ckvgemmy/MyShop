@@ -66,7 +66,10 @@ namespace MyShop.WebUI.Controllers
                 ProductManagerViewModel viewModel = new ProductManagerViewModel();
                 viewModel.Product = product;
                 viewModel.ProductCategories = productCategories.Collection();
-                return View(product);
+
+                // This is ProductManagerViewModle Type ? or product?
+                //return View(product);
+                return View(viewModel);
             }
         }
 
