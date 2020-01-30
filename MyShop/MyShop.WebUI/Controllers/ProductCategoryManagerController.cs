@@ -16,15 +16,15 @@ namespace MyShop.WebUI.Controllers
 
         public ProductCategoryManagerController(IRepository<ProductCategory> productCategoryContext)
         {
-            this.context = context;
+            context = productCategoryContext;
             
         }
 
         // GET: ProductManager
         public ActionResult Index()
         {
-            List<ProductCategory> productCategories = context.Collection().ToList();
-            return View(productCategories);
+            List<ProductCategory> productCategory = context.Collection().ToList();
+            return View(productCategory);
         }
 
         public ActionResult Create()
