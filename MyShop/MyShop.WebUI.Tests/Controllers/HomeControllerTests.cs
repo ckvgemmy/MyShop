@@ -12,25 +12,25 @@ using MyShop.WebUI.Controllers;
 
 namespace MyShop.WebUI.Tests.Controllers
 {
-    [TestClass]
-    public class HomeControllerTests
-    {
-        [TestMethod]
-        public void IndexPageDoesReturnProducts()
-        {
-            IRepository<Product> productContext = new Mocks.MockContext<Product>();
-            IRepository<ProductCategory> productCategoryContext = new Mocks.MockContext<ProductCategory>();
+    ////[TestClass]
+    //public class HomeControllerTests
+    //{
+    //    //[TestMethod]
+    //    //public void IndexPageDoesReturnProducts()
+    //    //{
+    //    //    IRepository<Product> productContext = new Mocks.MockContext<Product>();
+    //    //    IRepository<ProductCategory> productCategoryContext = new Mocks.MockContext<ProductCategory>();
 
-            productContext.Insert(new Product());
+    //    //    productContext.Insert(new Product());
 
-            HomeController controller = new HomeController(productContext, productCategoryContext);
+    //    //    HomeController controller = new HomeController(productContext, productCategoryContext);
 
-            var result = controller.Index() as ViewResult;
-            var viewModel = (ProductListViewModel)result.ViewData.Model;
+    //    //    var result = controller.Index() as ViewResult;
+    //    //    var viewModel = (ProductListViewModel)result.ViewData.Model;
 
-            Assert.AreEqual(1, viewModel.Products.Count());
-        }
+    //    //    Assert.AreEqual(1, viewModel.Products.Count());
+    //    //}
 
         
-    }
+    //}
 }
